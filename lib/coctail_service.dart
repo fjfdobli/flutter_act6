@@ -27,7 +27,6 @@ class CocktailService {
       // If we get here, something went wrong with the API call
       return _getMockCocktails(ingredient);
     } catch (e) {
-      print('Error fetching cocktails: $e');
       // If an error occurs, use mock data instead
       return _getMockCocktails(ingredient);
     }
@@ -52,7 +51,6 @@ class CocktailService {
       // If we get here, use mock data
       return _getMockCocktailDetails(id);
     } catch (e) {
-      print('Error fetching cocktail details: $e');
       return _getMockCocktailDetails(id);
     }
   }

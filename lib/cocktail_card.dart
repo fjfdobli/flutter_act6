@@ -66,7 +66,6 @@ class CocktailCard extends StatelessWidget {
                   width: double.infinity,
                   fit: BoxFit.cover,
                   errorBuilder: (context, error, stackTrace) {
-                    print('Error loading image: $error');
                     return Center(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
