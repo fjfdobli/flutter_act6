@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+// ignore: library_private_types_in_public_api
 class NewItemScreen extends StatefulWidget {
+  const NewItemScreen({super.key});
+
   @override
   _NewItemScreenState createState() => _NewItemScreenState();
 }
@@ -15,14 +18,17 @@ class _NewItemScreenState extends State<NewItemScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('New Item', style: TextStyle(fontWeight: FontWeight.bold)),
-        backgroundColor: Color(0xFF5946E8),
+        title: const Text(
+          'New Item',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        backgroundColor: const Color(0xFF5946E8),
         foregroundColor: Colors.white,
         elevation: 0,
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Form(
             key: _formKey,
             child: Column(
@@ -40,14 +46,14 @@ class _NewItemScreenState extends State<NewItemScreen> {
                     child: Icon(Icons.image, size: 50, color: Colors.grey[600]),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
 
                 // Title field
-                Text(
+                const Text(
                   'Title',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 TextFormField(
                   decoration: InputDecoration(
                     hintText: 'Enter title',
@@ -69,14 +75,14 @@ class _NewItemScreenState extends State<NewItemScreen> {
                     });
                   },
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
 
                 // Description field
-                Text(
+                const Text(
                   'Description',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 TextFormField(
                   decoration: InputDecoration(
                     hintText: 'Enter description',
@@ -99,14 +105,14 @@ class _NewItemScreenState extends State<NewItemScreen> {
                     });
                   },
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
 
                 // Additional field (optional as per your whiteboard sketch)
-                Text(
+                const Text(
                   'Price',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 TextFormField(
                   decoration: InputDecoration(
                     hintText: 'Enter price',
@@ -116,17 +122,19 @@ class _NewItemScreenState extends State<NewItemScreen> {
                     filled: true,
                     fillColor: Colors.white,
                     prefixText: '₱ ',
-                    prefixStyle: TextStyle(
+                    prefixStyle: const TextStyle(
                       color: Colors.black87,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  keyboardType: TextInputType.numberWithOptions(decimal: true),
+                  keyboardType: const TextInputType.numberWithOptions(
+                    decimal: true,
+                  ),
                   inputFormatters: [
                     FilteringTextInputFormatter.allow(RegExp(r'[0-9.]')),
                   ],
                 ),
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
 
                 // Save button
                 SizedBox(
@@ -143,12 +151,12 @@ class _NewItemScreenState extends State<NewItemScreen> {
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFF5946E8),
+                      backgroundColor: const Color(0xFF5946E8),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(25),
                       ),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Save',
                       style: TextStyle(
                         fontSize: 16,
